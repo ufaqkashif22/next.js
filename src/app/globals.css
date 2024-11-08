@@ -1,17 +1,96 @@
+@import 'aos/dist/aos.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/* Remove default margin and padding
+html,
+body,
+
+h2,
+h3,
+h4,
+h5,
+h6,
+
+ul,
+ol,
+li,
+blockquote {
+    margin: 0;
+    padding: 0;
+} */
+
+
+/* Add border box to images */
+img {
+    border: 0;
+}
+
+/*styling the text */
+
+
+
+h1 {
+  font-size: 4.5rem;
+  color: #161617;
+  font-weight: 800;
+} 
+
+/* h2{
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+/* } */
+
+ p, a, li {
+  font-size: 1.6rem;
+ 
+} 
+
+/* Remove anchor text decoration * */
+ a {
+  text-decoration: none;
+  line-height: 0;
+}
+
+
+button {
+  background-color: #161617;
+  border-radius: 2.4rem;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  height: 4rem;
+  padding: .3rem 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  /*letter-spacing: -0.1rem;*/
+}
+
+button:hover {
+  background-color: #fff;
+  border: .1rem solid #161617;
+  color: #161617;
+  transition-duration: .1s;
 }
 
 body {
@@ -20,8 +99,53 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
 }
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: #f03355;
+  -webkit-mask:repeating-linear-gradient(#000 0 10px,#0000 0 20px);
+}
+.loader:after {
+  -webkit-mask:repeating-linear-gradient(#0000 0 10px,#000 0 20px);
+  animation: l36 1.5s infinite;
+}
+@keyframes l36 {
+  0%,
+  10%  {transform: rotate(0)      translate(0)}
+  35%  {transform: rotate(0)      translate(100%)}
+  66%  {transform: rotate(180deg) translate(100%)}
+  90%,
+  100% {transform: rotate(180deg) translate(0) }
+}
+
+
+/* shape divider */
+.custom-shape-divider-bottom-1730559691 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1730559691 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 136px;
+}
+
+.custom-shape-divider-bottom-1730559691 .shape-fill {
+  fill: #FFFFFF;
+}
+
