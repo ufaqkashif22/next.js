@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="px-24 mx-auto text-center">
           <ContactCard/>
           <section className="my-24 mx-auto flex flex-col justify-center items-center">
-                    <h2 className="text-5xl font-bold mb-10">We&apos;d love to hear <span className="text-[#e50914]"> from you </span></h2>
+                    <h2 className="text-5xl font-bold mb-10">We love to hear <span className="text-[#e50914]"> from you </span></h2>
 
                     <ContactForm />
                 </section>
